@@ -1,0 +1,20 @@
+{
+    "name": "fzadelj/mqtt",
+    "description": "Lightweight MQTT client library",
+    "type": "library",
+    "authors": [
+        {
+            "name": "franjo",
+            "email": "fzadelj@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Mqtt": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4"
+    }
+}

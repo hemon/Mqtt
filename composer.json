@@ -1,11 +1,11 @@
 {
-    "name": "fzadelj/mqtt",
+    "name": "hemon/mqtt",
     "description": "Lightweight MQTT client library",
     "type": "library",
     "authors": [
         {
-            "name": "franjo",
-            "email": "fzadelj@gmail.com"
+            "name": "hemon",
+            "email": "hemono@gmail.com"
         }
     ],
     "autoload": {

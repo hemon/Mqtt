@@ -51,9 +51,15 @@ class MqttSocketClient
 
     public function connect()
     {
-        $this->socket = fsockopen(gethostbyname($this->address), $this->port, $errno, $errstr, 60);
+        if ( $this->isCleanSession() ) {
+            $this->socket = fsockopen(gethostbyname($this->address), $this->port, $errno, $errstr, 60);
+        } else {
+            $this->socket = pfsockopen(gethostbyname($this->address), $this->port, $errno, $errstr, 60);
+            if (ftell($this->socket) > 0) {
+                return true;
+            }
+        }
         stream_set_timeout($this->socket, 1);
-//        stream_set_blocking($this->socket, 0);
 
         $username = $this->getUsername();
         $password = $this->getPassword();
